@@ -34,12 +34,20 @@ h1{
     background-color: lightgreen;
 }
 .image2{
-    width: 200px;
-    display: inline-block;
+    height: 80px;
+}
+
+a{
+    background-color: orange;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
 }
 
 .message{
     display: inline-block;
+    vertical-align: top;
+    text-align: center;
     width: 290px;
     background-color: yellow;
     min-height: 300px;
