@@ -1,0 +1,48 @@
+body *{
+    outline: 1px dotted black;
+}
+
+.container{
+    width: 980px;
+    min-height: 800px;
+    background-color: skyblue;
+    margin: 0 auto;
+}
+
+.top{
+    min-height: 150px;
+    background-color: pink;
+}
+
+.image{
+    width: 400px;
+    display: inline-block;
+}
+
+ul, li{
+    display: inline-block;
+    font-size: 24px;
+    padding: 10px;
+}
+
+h1{
+    text-align: center;
+}
+
+.bottom{
+    min-height: 400px;
+    background-color: lightgreen;
+}
+.image2{
+    width: 200px;
+    display: inline-block;
+}
+
+.message{
+    display: inline-block;
+    width: 290px;
+    background-color: yellow;
+    min-height: 300px;
+    padding: 10px;
+    margin: 5px;
+}
