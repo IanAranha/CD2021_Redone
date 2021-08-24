@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>FORMS PRACTICE</title>
+</head>
+<body>
+	<h1>My Registration Form</h1>
+	<form>
+		<label for="firstname">First Name:</label>
+		<input type="text" id="firstname" name="firstname"><br>
+		<label for="lastname">Last Name:</label>
+		<input type="text" id="lastname" name="lastname"><br>
+		<label for="email">Email:</label>
+		<input type="email" id="email" name="email"><br>
+		<label for="password">Password:</label>
+		<input type="password" id="password" name="password"><br>
+		<label for="pw_confirm">PW Confirm:</label>
+		<input type="password" id="pw_confirm" name="pw_confirm"><br>
+		<label for="birthday">Birthday:</label>
+		<input type="date" id="birthday" name="birthday"><br>
+
+		<label for="male">Male</label>
+		<input type="radio" id="male" name="gender" value="male"><br>
+
+		<label for="female">Female</label>
+		<input type="radio" id="female" name="gender" value="female"><br>
+
+		<label for="decline">Prefer not to say</label>
+		<input type="radio" id="decline" name="gender" value="decline"><br>
+		
+		<p>Tell us a little about yourself:</p>
+		<textarea name="essay" cols="30" rows="3"></textarea><br>
+
+		<label for="fav_language">Favorite Language:</label>
+		<select name="language" id = "fav_language">
+			<option value="python">Python</option>
+			<option value="javascript">Javascript</option>
+			<option value="c_sharp">C#</option>
+		</select><br>
+		
+
+		<input type="submit">
+	</form>	
+</body>
+</html>

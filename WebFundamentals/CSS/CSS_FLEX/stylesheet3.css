@@ -1,0 +1,18 @@
+.center-box{
+    top: 50%;
+    left: 50%;
+    width: 50em;
+    height: 25em;
+    transform: translate(-50%, -50%);
+    position: fixed;
+    background-color: blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.center-item{
+    width: 5em;
+    height: 5em;
+    background-color: burlywood;
+}
