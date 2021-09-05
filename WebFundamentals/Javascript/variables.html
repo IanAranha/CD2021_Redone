@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Practice</title>
+</head>
+<body>
+    <script>
+        // String variables and displaying them.
+        var myStringVariable = "My name is Ian";
+        var password = "Password1234"
+        console.log(password); //Displays Password1234
+
+        // Number variable and operations 
+        var myNum = 5;
+        var myOtherNum = 10;
+        console.log(myNum + myOtherNum); //Displays  15
+
+        //Undefined
+        var myVar;
+        console.log(myVar); //Displays "undefined"
+
+        myVar = "Now a value is assigned to myVar."
+        console.log(myVar); //Will display "Now a value...."
+        
+        //Math operations:
+        console.log( 5 % 2); //displays 1;
+        console.log( 6 % 2); //displays 0;
+        console.log( 8 % 3); //displays 2;
+
+        //Removing decimal places
+        var Num1 = Math.round(2.5) //Display 3
+        var Num2 = Math.round(2.4) //Display 2
+        var Num3 = Math.round(-2.9) //Display -3
+        var Num4 = Math.round(-2.1) //Display -2
+
+        console.log(Num1)
+        console.log(Num2)
+        console.log(Num3)
+        console.log(Num4)
+        
+        //Rounding numbers down
+        var Num5 = Math.floor(3.444) //Displays 3
+        var Num6 = Math.floor(3.99) //Displays 3
+        var Num7 = Math.floor(3.5) //Displays 3
+        var Num7a = Math.floor(-3.2) //Display -4
+        var Num7b = Math.floor(-3.9) //Display -4
+
+        console.log(Num5)
+        console.log(Num6)
+        console.log(Num7)
+        console.log(Num7a)
+        console.log(Num7b)
+
+        //Rounding numbers up
+        var Num8 = Math.ceil(3.444) //Displays 4
+        var Num9 = Math.ceil(3.99) //Displays 4
+        var Num10 = Math.ceil(3.5) //Displays 4
+        var Num10a = Math.ceil(-3.44) //Displays -3
+        var Num10b = Math.ceil(-3.9) //Displays -3
+
+        console.log(Num8)
+        console.log(Num9)
+        console.log(Num10)
+        console.log(Num10a)
+        console.log(Num10b)
+
+        //Math trunc
+        var Num11 = Math.trunc(3.444) //Displays 3
+        var Num12 = Math.trunc(-3.99) //Displays -3
+        var Num13 = Math.trunc(3.5) //Displays 3
+        
+        console.log(Num11)
+        console.log(Num12)
+        console.log(Num13)
+
+    </script>
+</body>
+</html>
