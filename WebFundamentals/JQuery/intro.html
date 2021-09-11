@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("a").click(function(){
+                alert("You are now leaving this page...");
+                console.log("Hello from Inside.");
+            })
+
+            $("#p_hide").click(function(){
+                $("p").hide()
+            })
+
+            $("#p_show").click(function(){
+                $("p").show()
+            })
+
+            $("h2").hover(function(){
+                $("h2").text("Go see the Space Needle")
+            })
+
+            $(".append").click(function(){
+                console.log("HERE WE ARE!!")
+                $(".result").append("<h4>We have added this</h4>")
+            })
+        })
+    </script>
+</head>
+<body>
+    <p>This is a paragraph!</p>
+
+    <p>This is also a paragraph.</p>
+
+    <button id="p_hide">Click to hide all the paragraphs</button>
+
+    <button id="p_show">Click to show all paragraphs</button>
+
+    <a id="mylink" href="https://google.com">GOOGLE SUMMONER</a>
+    <h3>Mountain View, CA</h3>
+    <h2>Seattle, WA</h2>
+
+    <button class="append">Click to see how .append() works.</button>
+    <div class="result"></div>
+</body>
+</html>

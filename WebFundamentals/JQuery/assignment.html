@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQUERY Assignments</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            
+            // JQ for a click -->pops up an alert.
+            $('.click').click(function(){
+                alert("You clicked a link!")
+            })
+
+            //click button to hide the whole panel
+            $(".hide").click(function(){
+                $(".hide").hide()
+            })
+
+            //click button to show previous panel
+            $(".show").click(function(){
+                $(".hide").show()
+            })
+
+            //toggle
+            $("#toggler").click(function(){
+                $("#toggle_this").toggle()
+            })
+
+            //Slide up and down.
+            $("#slide_down").click(function(){
+                $(".slide").slideDown();
+            })
+
+            $("#slide_up").click(function(){
+                $(".slide").slideUp();
+            })
+
+             //Slide_toggle
+            $("#slide_toggler").click(function(){
+                $("#slide_toggle_this_a").toggle()
+            })
+
+            //Fade_In
+            $("#fade_in").click(function(){
+                $(".fade").fadeIn()
+            })
+
+            //Fade_Out
+            $("#fade_out").click(function(){
+                $(".fade").fadeOut()
+            })
+
+            //addClass
+            $("#demo").click(function(){
+                $("#demo").addClass("one")
+            })
+
+            //before/after
+            $('#before').click(function(){
+			    $('#p_one').before("<p>LOREM IPSUM PARAGRAPHS STOLEN FROM WEB</p>")
+		    });
+
+		    $('#after').click(function(){
+			    $('#p_two').after("<p>Someone clicked the after button</p>")
+                $("#p_two").addClass("one")
+		    });
+
+            //.HTML
+            $(".append_NFCW").click(function(){
+                $(".division").html("<h3>NFC WEST<h3>")
+                $("#teams").html("<li>Seattle Seahawks</li><li>LA Rams</li><li>Arizona Cardinals</li><li>San Francisco 49ers</li>")
+            })
+
+            $(".append_NFCS").click(function(){
+                $(".division").html("<h3>NFC SOUTH<h3>")
+                $("#teams").html("<li>Atlanta Falcons</li><li>Carolina Panthers</li><li>New Orleans Saints</li><li>Tampa Bay Buccaneers</li>")
+            })
+
+            $(".append_NFCE").click(function(){
+                $(".division").html("<h3>NFC EAST<h3>")
+                $("#teams").html("<li>New York Giants</li><li>Dallas Cowboys</li><li>Philadephia Eagles</li><li>Washington Redskins</li>")
+            })
+
+            $(".append_to_list").click(function(){
+                $("#list").append("<li>Tomatoes</li>")
+            })
+
+        //attr
+            $("#button_bar").click(function(){
+                $("#header_bar").attr("style","background:blue");
+            })
+        })
+    </script>
+</head>
+<style>
+    body *{
+        background-color: skyblue;
+    }
+
+    .one{
+        border: 2px solid black;
+        color: white;
+        background-color: black;
+    }
+</style>
+<body>
+    <fieldset>
+        <legend>.click</legend>
+        <p><a class="click" href="">Click here for an alert</a></p>
+    </fieldset>
+    <fieldset class="hide">
+        <legend>.hide</legend>
+        <p>Click here to hide this panel</p>
+        <button>HIDE</button>
+    </fieldset>
+    <fieldset class="show">
+        <legend>.show</legend>
+        <p>Click here to show previous panel</p>
+        <button>SHOW</button>
+    </fieldset>
+    <fieldset>
+        <legend>.toggle</legend>
+        <p id="toggle_this">Click here to toggle between hiding and showing using the same button</p>
+        <button id="toggler">TOGGLE</button>
+    </fieldset>
+    <fieldset>
+        <legend>.slide_up/.slide_down</legend>
+        <p class="slide">Click here to watch this slide up and down</p>
+        <button id="slide_up">SLIDE UP</button>
+        <button id="slide_down">SLIDE DOWN</button>
+    </fieldset>
+    <fieldset>
+        <legend>.slide_toggle</legend>
+        <p id="slide_toggle_this_a">Now you see me</p>
+        <p>Now you don't</p>
+        <button id="slide_toggler">TOGGLE</button>
+    </fieldset>
+	<fieldset>
+        <legend>.fade_in/.fade_out</legend>
+        <p class="fade">Click here to watch this fade_in and fade_out</p>
+        <button id="fade_in">Fade_In</button>
+        <button id="fade_out">Fade_Out</button>
+    </fieldset>
+    <fieldset>
+        <legend>.addClass</legend>
+        <h1>Car Details</h1>
+        <p id="demo">Car is XUV500</p>
+        <p>2179 cc</p>
+        <p>Independent Suspension</p>
+        <p>Fuel Tank Capacity: 70 litres</p>
+    </fieldset>
+    <fieldset>
+        <legend>Before/After </legend>
+        <h3>Lorem Ipsum</h3>
+        <p id="p_one">Suspendisse tortor magna, auctor sit amet quam id, volutpat rutrum mi. Mauris tristique pharetra enim, sed consectetur mi porta quis. Sed aliquam ligula quis sem viverra suscipit. Aenean tincidunt mattis volutpat. Duis feugiat, mi eget eleifend varius, sapien ante lobortis lectus, a ullamcorper elit massa sit amet ipsum. Nulla ac volutpat ex, in fringilla lectus. In hac habitasse platea dictumst. Praesent a ligula laoreet, elementum lorem in, dictum nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aenean nisi sapien, vehicula vitae fermentum non, ultrices ut ex. Suspendisse ut quam vitae libero varius interdum. Proin tincidunt elit a urna tempor, id condimentum magna tincidunt. Mauris nisi ipsum, interdum vitae dictum sit amet, volutpat in augue. Nulla non blandit ligula. Cras faucibus nec enim sed laoreet. Sed convallis ornare arcu sit amet feugiat.</p>
+        <p id="p_two">Nam a nisi lacus. Quisque sit amet maximus felis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nulla velit, sodales vitae pellentesque quis, facilisis sed quam. Mauris vulputate tellus at nisi ultrices placerat. Aliquam erat volutpat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Praesent faucibus, turpis vitae suscipit cursus, nisl libero fringilla lacus, id pulvinar lectus magna non enim. Donec lacinia, sapien et vehicula aliquam, risus purus semper magna, non congue ante ex id leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus volutpat elementum euismod. Nulla tincidunt ligula lacus, ac ornare velit convallis vel. Ut ullamcorper volutpat lectus, sed auctor dolor eleifend non. Maecenas et metus accumsan, placerat nunc eu, gravida turpis.</p>
+        <button id='before'>Add Before</button>
+        <button id='after'>Add After</button>
+    </fieldset>
+    <fieldset>
+        <legend>.html</legend>
+        <h1>NFL Division Rivals</h1>
+        <h3 class="division"></h3>
+        <ol id="teams">
+        </ol>
+        <button class="append_NFCW">Click to show teams for NFC West</button>
+        <button class="append_NFCS">Click to show teams for NFC South</button>
+        <button class="append_NFCE">Click to show teams for NFC East</button>
+    </fieldset>
+    <fieldset>
+        <legend>.append</legend>
+        <h3>Shopping List</h3>
+        <ol id="list">
+            <li>Grapes</li>
+            <li>Soda Bread</li>
+            <li>Warm toast</li>
+        </ol>
+        <button class="append_to_list">Click to append selected items to list</button>
+    </fieldset>
+    <fieldset>
+        <legend>.attr</legend>
+        <div>
+            <h1 id="header_bar" style="background-color: blueviolet;">The power of the computer!</h1>
+            <button id="button_bar" style="width:200px; height: 60px; background-color: wheat;">Click to change!</button>
+        </div>
+    </fieldset>
+</body>
+</html>
