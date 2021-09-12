@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <!-- JQuery Library access-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    
+    <style>
+        .container{
+            position: absolute;
+            border: 2px solid black;
+            width: 350px;
+            height: 500px;
+            top: 20%;
+            left: 40%;
+            text-align: center;
+        }
+
+        img{
+            width: 300px;
+            height: 120px;
+            margin-bottom: 2px;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            $('img').click(function(){
+                $(this).attr('temp', $(this).attr("src"));
+                $(this).attr('src', $(this).attr("data-alt-src"));
+                $(this).attr('data-alt-src', $(this).attr("temp"));
+            })
+        })
+    </script>
+    <title>Disappearing Ninja</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-med-1">
+                <img src='./img/cat0.png' data-alt-src='./img/ninja0.png' temp="">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-med-1">
+                <img src='./img/cat1.png' data-alt-src='./img/ninja1.png' temp="">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-med-1">
+                <img src='./img/cat2.png' data-alt-src='./img/ninja2.png' temp="">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-med-1">
+                <img src='./img/cat3.png'data-alt-src='./img/ninja3.png' temp="">
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+</html>
