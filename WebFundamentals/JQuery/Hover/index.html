@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        $(".img-responsive").hover(function(){
+          var temp = $(this).attr("src");
+          $(this).attr("src", $(this).attr("alt-src"));
+          $(this).attr("alt-src", temp);
+        })
+      });
+    </script>
+    <style>
+      *{
+        box-sizing: border-box;
+      }
+      img{
+        min-width: 200px;
+        max-width: 200px;
+        min-height: 200px;
+        max-height: 200px;
+        border: 2px solid black;
+      }
+    </style>
+    <title>JQuery Hover</title>
+</head>
+<body>
+  <div class="container">
+    <h3>NFL Quarterbacks.</h3>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2">
+          <img class="img-responsive" src="/images/Arizona.jpeg"  alt-src="/Images/Kyler_Arizona.jpeg" temp=""/>
+        </div>
+        <div class="col-md-2">
+          <img class="img-responsive" src="/images/Philly.jpeg" alt-src="/Images/Jalen_Hurts.jpeg" temp=""/>
+        </div>
+        <div class="col-md-2">
+          <img class="img-responsive" src="/images/Seahawks.png"  alt-src="/Images/Wilson_Seahawks.png" temp=""/>
+        </div>
+        <div class="col-md-2">
+          <img class="img-responsive" src="/images/SFO.png" alt-src="/Images/Garopollo_49ers.png" temp=""/>
+        </div>
+        <div class="col-md-2">
+          <img class="img-responsive" src="/images/Rams.png" alt-src="/Images/Stafford_Rams.jpeg" temp=""/>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
