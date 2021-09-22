@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".infotext").hide();
+            $(".datepicker").datepicker();
+
+            $("#form-1").submit(function(){
+                var name = $("#first_name").val();
+                var from_date = $("#from_date").val();
+                var to_date = $("#end_date").val();
+                var alert_string="";
+                if(name.length == 0){
+                    console.log("empty")
+                    $("button").css("background-color", "red");
+                    $(".infotext").show();
+                } else {
+                    alert_string="Thanks "+name+"!. Your cruise leaves on "+from_date+ " and returns on "+ to_date +"!";
+                    alert(alert_string);
+                }
+                return false;
+            })
+        })
+
+    </script>
+    <title>Date Validation</title>
+    <style>
+        .form-control{
+            width: 300px;
+        }
+
+        button{
+            background-color: blueviolet;
+            color: white;
+        }
+
+        #input_box{
+            display: flex;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="jumbotron text-center">
+        <h1>Welcome to the Codingdojo plan-a-Cruise!</h1>
+    </div>
+    
+    <div class="container">
+        <form id="form-1" action="process" method="POST">
+            <div class="form-group">
+              <label for="from_date">From: </label>
+              <input type="text" class="form-control datepicker" id="from_date" placeholder="Enter start date">
+            </div>
+            <div class="form-group">
+              <label for="end_date">To: </label>
+              <input type="text" class="form-control datepicker" id="end_date" placeholder="Enter end date">
+            </div>
+            <br>
+            <br>
+            <div class="form-group">
+                <label for="first_name">Name: </label><br>
+                <div id="input_box">
+                    <input type="text" class="form-control" id="first_name" placeholder="Enter your name">
+                    <p><span class="infotext" style="color: red;">Name cannot be blank</span></p>
+                </div>
+            </div>
+            <br>
+            <button type="submit">Click to Confirm</button>
+          </form>
+    </div>
+</body>
+</html>
