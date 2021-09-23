@@ -29,12 +29,13 @@
                 var to_date = $("#end_date").val();
                 var alert_string="";
                 if(name.length == 0){
-                    console.log("empty")
                     $("button").css("background-color", "red");
                     $(".infotext").show();
                 } else {
+                    $("button").css("background-color", "blueviolet");
+                    $(".infotext").hide();
                     alert_string="Thanks "+name+"!. Your cruise leaves on "+from_date+ " and returns on "+ to_date +"!";
-                    alert(alert_string);
+                    setTimeout(function() { alert(alert_string); }, 250);
                 }
                 return false;
             })
@@ -67,18 +68,18 @@
         <form id="form-1" action="process" method="POST">
             <div class="form-group">
               <label for="from_date">From: </label>
-              <input type="text" class="form-control datepicker" id="from_date" placeholder="Enter start date">
+              <input autocomplete="off" type="text" class="form-control datepicker" id="from_date" placeholder="Enter start date">
             </div>
             <div class="form-group">
               <label for="end_date">To: </label>
-              <input type="text" class="form-control datepicker" id="end_date" placeholder="Enter end date">
+              <input autocomplete="off" type="text" class="form-control datepicker" id="end_date" placeholder="Enter end date">
             </div>
             <br>
             <br>
             <div class="form-group">
                 <label for="first_name">Name: </label><br>
                 <div id="input_box">
-                    <input type="text" class="form-control" id="first_name" placeholder="Enter your name">
+                    <input autocomplete="off" type="text" class="form-control" id="first_name" placeholder="Enter your name">
                     <p><span class="infotext" style="color: red;">Name cannot be blank</span></p>
                 </div>
             </div>

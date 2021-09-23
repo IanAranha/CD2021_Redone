@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body *{
+            background-color: skyblue;
+        }
+        .container{
+            display: inline;
+            text-align: center;
+        }
+        .container2{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/bootstrap/scripts/jquery.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $(document).ready(function(){
+            for(var i=1; i<152; i++){
+                console.log("Reading..........")
+                $(".row").append("<img src='http://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/"+i+".png'>")
+            }
+        })
+    </script>
+    <title>Pokemon API</title>
+</head>
+<body>
+    
+    <div class="container">
+        <h3>Pokemon Thumbnails</h3>
+        <div class="container2">
+            <div class = "row">
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>
