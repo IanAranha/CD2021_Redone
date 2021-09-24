@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body *{
+            background-color: skyblue;
+        }
+        .container{
+            display: inline;
+            text-align: center;
+        }
+        .container2{
+            display: flex;
+            height: 650px;
+        }
+        .container3{
+            width: 60%;
+            border: 10px solid black;
+            overflow-y: scroll;
+        }
+        .container4{
+            width: 30%;
+            border: 10px solid blue;
+            margin-left: 40px;
+        }
+
+    </style>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $(document).ready(function(){
+            for(var i=1; i<152; i++){
+                $(".row").append("<img id="+i+" src='http://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/"+i+".png'>")
+            }
+
+            var thisID;
+            $("img").click(function(){
+                console.log(this.id)
+                thisID = this.id;
+
+                console.log(thisID);
+                $.get("https://pokeapi.co/api/v2/pokemon/"+thisID+"/",function(res){
+                    console.log(res);
+                    var htmlString="";
+                    htmlString+="<h2>Pokemon Info</h2>";
+                    htmlString+="<h3>Name: "+res.name+"</h3>";
+                    htmlString+="<h3>Abilities:</h3>";
+                    htmlString+="<ul style='margin-left: 0px; text-align:center ; list-style-position:inside'>"  
+                    for(var i=0; i<res.abilities.length; i++){
+                        htmlString+="<li>"+res.abilities[i].ability.name + "</li>";
+                    }
+                    // Placeholder for more information to add
+                    htmlString+="</ul>";
+                    htmlString+="<h3>Types:</h3>";
+                    htmlString+="<ul style='margin-left: 0px; text-align:center ; list-style-position:inside'>"  
+                    for(var i=0; i<res.types.length; i++){
+                        htmlString+="<li>"+res.types[i].type.name + "</li>";
+                    }
+                    // Placeholder for more information to add
+                    htmlString+="</ul>";
+                    htmlString+="<h3>Height:</h3>";
+                    htmlString+="<p>"+res.height+"</p>";
+                    htmlString+="<h3>Weight: </h3>";
+                    htmlString+="<p>"+res.weight+"</p>";
+                    console.log(htmlString);
+                    $(".itemdata").html(htmlString);
+                }, "json")
+            })
+        })
+    </script>
+    <title>Pokemon API</title>
+</head>
+<body>
+    
+    <div class="container">
+        <h2>Pokemon Thumbnails to info:</h3>
+        <h3>Click on a picture to get some info.</h3>
+        <div class="container2">
+            <div class="container3">
+                <div class = "row">
+                </div>
+            </div>
+            <div class="container4">
+                <div class="itemdata">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

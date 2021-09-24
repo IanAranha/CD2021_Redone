@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+         $(document).ready(function(){
+                $.get("https://pokeapi.co/api/v2/pokemon/1/", function(res){
+                    console.log(res);
+                    console.log(res.types[0].type.name);
+                    console.log(res.types[1].type.name);
+                    var htmlString="";
+                    htmlString+="<h2>"+res.forms[0].name+"</h2>"
+                    htmlString+="<h4>Types</h4>";
+                    htmlString+="<ul>"
+                    for(var i = 0; i<res.types.length;i++){
+                        console.log(res.types[i])
+                        htmlString+="<li>"+res.types[i].type.name+"</li>";
+                    }
+                    htmlString+="</ul>"
+                    console.log(htmlString)
+                    $("#bulbasaur").html(htmlString);
+                }, "json");
+            })
+    </script>
+    <title>Traversing JSON</title>
+</head>
+<body>
+    <div id="bulbasaur">
+    </div>
+</body>
+</html>
