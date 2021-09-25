@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- BootStrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+    <!-- CDN for JQuery -->
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <style>
+        body{
+            background-color: cadetblue;
+        }
+
+        .container{
+            padding-top: 30px;
+        }
+
+        #location{
+            width: 430px;
+        }
+        
+        .container-fluid{
+            margin-top: 3%;
+            border: 5px solid black;
+            width: 900px;
+            min-height: 500px;
+        }
+    </style>
+    <script>
+        $(document).ready(function($){
+            $("form").submit(function(){
+                var city = $("#location").val();
+                var key = "0a19125345c8479a02d63194d07cd85b";
+                console.log(city)
+                console.log(key)
+                var url=`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}`;
+                console.log(url);
+                $.get(url, function(res){
+                    function kToC(num){
+                        return num - 273.15
+                    }
+                    console.log(res)
+                    console.log(res.main.temp);
+                    var tempNow = kToC(res.main.temp).toFixed(2)
+                    var htmlStringCity=`<h3>City: ${res.name} </h3>`;
+                    $(".cityName").html(htmlStringCity)
+                    var htmlStringTemp = `<h3>Current Temp: ${tempNow}<span>&#176;</span>C</h3>`
+                    $(".tempNow").html(htmlStringTemp)
+                    var long=(res.coord.lon).toFixed(1)
+                    var htmlStringLong = `<h3>Longitude: ${long}<span>&#176;</span></h3>`
+                    var lat=(res.coord.lat).toFixed(1)
+                    var htmlStringLat = `<h3>Latitude: ${lat}<span>&#176;</span></h3>`
+                    $(".long").html(htmlStringLong)
+                    $(".lat").html(htmlStringLat)
+                }, "json")
+                return false;
+            })
+        })
+    </script>
+    <title>WEATHER API</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Weather API</h2>
+        <form>
+            <div class="form-group">
+                <label for="location">Enter Location For Weather Updates:</label>
+                <input type="text" class="form-control" id="location" placeholder="Location....">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        <div class="container-fluid">
+            <div class="cityName">  </div>
+            <div class="location">
+                <div class="long"></div>
+                <div class="lat"></div>
+            </div>
+            <div class="tempNow"></div>
+
+        </div>
+    </div>
+    <!-- BootStrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
