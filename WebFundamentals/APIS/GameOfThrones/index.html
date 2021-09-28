@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Game of Thrones</title>
+    <style>
+        body{
+            background-color: aquamarine;
+        }
+        .container{
+            border: 5px solid black;
+            margin-top: 90px;
+            width: 100%;
+            padding: 20px;
+        }
+
+        img{
+            width: 250px;
+            height: 200px;
+            border: 5px solid white;
+        }
+        fieldset {
+            border: 3px solid black !important;
+            padding: 5px !important;
+        }
+
+        legend {
+            width: inherit;
+            padding: 0 10px;
+            border: none;
+        }
+
+        #lower{
+            min-height: 90px;
+            padding-top: 20px;
+            padding-bottom: 30px;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <img src="/images/stark.jpg" class="rounded mx-auto d-block" alt="House of Stark" id="362">
+            </div>
+            <div class="col">
+                <img src="/images/baratheon.png" class="rounded mx-auto d-block" alt="House of Baratheon" id="17">
+            </div>
+            <div class="col">
+                <img src="/images/lannister.jpg" class="rounded mx-auto d-block" alt="House of Lannister" id="229">
+            </div>
+            <div class="col">
+                <img src="/images/targaryen.jpg" class="rounded mx-auto d-block" alt="House of Targ" id="378">
+            </div>
+        </div>
+    </div>
+    <div class="container" id="lower">
+        <fieldset>
+            <legend>House Details</legend>
+            <div class="name"></div>
+            <div class="words"></div>
+            <div class="titles"></div>
+        </fieldset>
+    </div>
+    <script>
+        $(document).ready(function(){
+            $("img").click(function(){
+                var picID = this.id
+                $.get(`https://www.anapioficeandfire.com/api/houses/${picID}`, function(res){
+                    console.log(res);
+                    var nameString=""
+                    nameString+=`<h3>Name: ${res.name}</h3>`
+                    $(".name").html(nameString)
+                    var wordsString=""
+                    wordsString+=`<h3>Words: ${res.words}</h3>`
+                    $(".words").html(wordsString)
+                    var titleString="<h3>Titles</h3><ul>"
+                    for(var i=0; i<res.titles.length; i++){
+                        titleString+=`<li>${res.titles[i]}</li>`
+                    }
+                    titleString+=`</ul>`
+                    $(".titles").html(titleString)
+                }, "json")
+            })
+        })
+    </script>
+</body>
+</html>

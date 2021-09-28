@@ -35,7 +35,7 @@
         $(document).ready(function($){
             $("form").submit(function(){
                 var city = $("#location").val();
-                var key = "0a19125345c8479a02d63194d07cd85b";
+                var key = "<insert>";
                 console.log(city)
                 console.log(key)
                 var url=`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}`;
