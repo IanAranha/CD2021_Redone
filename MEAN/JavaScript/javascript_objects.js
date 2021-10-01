@@ -11,7 +11,9 @@ function registration_list(arr){
     for( let i = 0; i< arr.length; i++){
         let string =""
         for(const key in arr[i]){
-            string+=`${key} : ${arr[i][key] }`
+            const keyExtract = key
+            const capitalStr = key.replace(/^\w/, c => c.toUpperCase());
+            string+=`${capitalStr } : ${arr[i][key] } `
         }
         console.log(string)
     }
