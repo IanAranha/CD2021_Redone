@@ -1,0 +1,36 @@
+body{
+  background-color: seagreen;
+}
+
+.container{
+  border: 3px solid black;
+  border-radius: 4px;
+  margin-top: 5vh;
+  min-height: 20vh;
+}
+
+.container-fluid{
+  border: 3px solid red;
+  border-radius: 4px;
+  margin-top: 3vh;
+  min-height: 20vh;
+}
+
+.row{
+  border: 3px solid hotpink;
+  min-height: 10vh;
+}
+
+.col{
+  border: 1px solid blue;
+  background-color: cornflowerblue;
+  height: 100%;
+  justify-content: center;
+  margin-left: 20vh;
+}
+
+img{
+  width: 350px;
+  height: 350px;
+}
+
