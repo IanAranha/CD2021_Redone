@@ -23,14 +23,20 @@ app.get('/', (req, res) => {
   res.render('index.html')
 })
 
-app.get('/cars', (req, res) => {
-  console.log('Received request for cars page')
-  res.render('cars')
-})
-
 app.get('/cats', (req, res) => {
   console.log('Received request for cats page')
   res.render('cats')
+})
+
+app.get('/leopard', (req, res) => {
+  const catInfo = [
+    { taxonomic_name: 'Pantera pardus' },
+    { characteristics: 'A leopard’s body is built for hunting. They have sleek, powerful bodies and can run at speeds of up to 57 kph. They are also excellent swimmers and climbers and can leap and jump long distances.' },
+    { size: 'Males are 23.6 - 27.6 inches at shoulder. Females are generally smaller at 22.4–25.2 in' },
+    { weight: 'Males are 81.6–198.4 lb, while females are 61.7–132.3 lb' }
+  ]
+  console.log('Received request for leopard page')
+  res.render('leopard', { cats: catInfo })
 })
 
 app.listen(8000, function () {
