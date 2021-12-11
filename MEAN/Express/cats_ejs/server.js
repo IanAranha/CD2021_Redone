@@ -1,6 +1,7 @@
 const express = require('express')
-const app = express()
 const path = require('path')
+
+const app = express()
 
 // Set the default directory to views folder
 app.set('views', path.join(__dirname, '/views'))

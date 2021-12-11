@@ -4,7 +4,6 @@ const path = require('path')
 
 // Set the default directory to views folder
 app.set('views', path.join(__dirname, '/views'))
-app.set('view engin', 'ejs')
 
 // Set for folder for CSS. and JavaScript libraries
 console.log(__dirname)
