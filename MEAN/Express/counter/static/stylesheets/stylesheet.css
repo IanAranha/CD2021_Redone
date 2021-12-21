@@ -13,7 +13,7 @@ section{
 .container{
   border: 5px solid white;
   border-radius: 5px;
-  width: 80vh;
+  t-50width: 80vh;
   height: 50vh;
   background-color: cornflowerblue;
   position: absolute;
